@@ -48,7 +48,7 @@ function headerShadow() {
 
 /* -- Typing revealing effect -- */
 var typingEffect = new Typed(".typedText",{
-  strings : ["Fultter Developer","Coder"],
+  strings : ["Flutter Developer"],
   loop : true,
   typeSpeed : 100, 
   backSpeed : 80,
