@@ -23,13 +23,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* -- Navigation Function -- */
 function myMenuFunction(){
-  var menuBtn = document.getElementById("myNavMenu");
+  const menuBtn = document.getElementById("myNavMenu");
   if(menuBtn.className === "nav-menu"){
     menuBtn.className += " responsive";
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
   } else {
     menuBtn.className = "nav-menu";
+    document.body.style.overflow = ''; // Restore scrolling
   }
 }
+
+// Close mobile menu when clicking X button or outside
+document.addEventListener('click', (e) => {
+  const menu = document.getElementById("myNavMenu");
+  const menuBtn = document.querySelector('.nav-menu-btn');
+  
+  // Close when clicking X button
+  if (e.target.classList.contains('menu-close-btn')) {
+    menu.className = "nav-menu";
+    document.body.style.overflow = '';
+  }
+  
+  // Close when clicking outside menu
+  if (menu.className.includes('responsive') && 
+      !e.target.closest('.nav-menu') && 
+      !e.target.closest('.nav-menu-btn')) {
+    menu.className = "nav-menu";
+    document.body.style.overflow = '';
+  }
+});
 
 /* -- Add shadow to the navigation bar when scrolling -- */
 window.onscroll = function() {headerShadow()};
