@@ -46,6 +46,8 @@ function headerShadow() {
   }
 }
 
+/* Skills marquee animation is handled by CSS */
+
 /* -- Typing revealing effect -- */
 var typingEffect = new Typed(".typedText",{
   strings : ["Flutter Developer","Coder"],
