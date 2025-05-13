@@ -477,13 +477,47 @@ h3{
     flex-wrap: wrap;
     gap: 5px;
 }
-.skills-list span{
-    font-size: 14px;
+.skills-marquee {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.skills-track {
+    display: flex;
+    width: 200%;
+    animation: marquee 20s linear infinite;
+}
+
+.skills-list {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+}
+
+.skills-list span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
     background: var(--first-color);
     color: rgb(255, 255, 255);
-    padding: 2px 10px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    white-space: nowrap;
 }
+
+.skills-list i {
+    font-size: 24px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Marquee animation styles already added */
 
 /* -- Project box -- */
 .project-container {
